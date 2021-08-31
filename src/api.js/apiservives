@@ -1,0 +1,9 @@
+export const DetailsService = async (dispatch: any, data: any) => {
+  try {
+   
+    const { id } = data;
+    dispatch(clearUserDetailSuccess());
+    res = await axiosGet("/users/" + id);
+   
+  } catch (error) {}
+};
