@@ -64,11 +64,11 @@ const CurrentOpenings = ({}) => {
   const dispatch = useDispatch();
   const userdata = useSelector((state) => state.user);
   let { state } = useLocation();
-  console.log("state in currentpage", state);
+
   useEffect(() => {
     dispatch(fetchUsers(state));
   }, []);
-  console.log("userdata", userdata.user);
+
   return (
     <>
       <Header></Header>
@@ -79,11 +79,6 @@ const CurrentOpenings = ({}) => {
         </Typography>
 
         <div style={{ marginTop: "10px" }}>
-          {/* {userdata.user
-            ? 
-            
-             userdata.user.map((item) => { */}
-          {/* return ( */}
           <>
             <Grid item className={classes.itemgrid}>
               <Card className={classes.root} lg={3} sm={2}>
@@ -103,10 +98,6 @@ const CurrentOpenings = ({}) => {
               </Card>
             </Grid>
           </>
-          {/* ); */}
-          {/* }
-              )
-            : ""} */}
         </div>
       </Grid>
     </>

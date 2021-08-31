@@ -1,23 +1,15 @@
 import React from "react";
-import Paper from "@material-ui/core/Paper";
-import InputBase from "@material-ui/core/InputBase";
-import Divider from "@material-ui/core/Divider";
+
 import IconButton from "@material-ui/core/IconButton";
 import { makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import { Button, Grid } from "@material-ui/core";
-import WbIncandescentOutlinedIcon from '@material-ui/icons/WbIncandescentOutlined';
-import {connect} from 'react-redux'
-import {
-  alpha,
-  ThemeProvider,
-  withStyles,
-  createTheme,
-} from "@material-ui/core/styles";
+import WbIncandescentOutlinedIcon from "@material-ui/icons/WbIncandescentOutlined";
+import { connect } from "react-redux";
+import { withStyles, createTheme } from "@material-ui/core/styles";
 
 import { useHistory } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
-
 
 const CssTextField = withStyles({
   root: {
@@ -29,37 +21,25 @@ const CssTextField = withStyles({
       borderBottomColor: "white",
       color: "white",
     },
-    "& .MuiInputBase-input":{
-        color:"white",
-        fontWeight:"900",
-        height:"21px",
-        width:"270px"
+    "& .MuiInputBase-input": {
+      color: "white",
+      fontWeight: "900",
+      height: "21px",
+      width: "270px",
     },
-    //   '& .MuiOutlinedInput-root': {
-    //     '& fieldset': {
-    //       borderColor: 'red',
-    //     },
-        '&:hover fieldset': {
-          borderColor: 'yellow',
-          borderBottomColor: "white",
-        },
-    //     '&.Mui-focused fieldset': {
-    //       borderColor: 'white',
-    //     },
 
-    //   },
+    "&:hover fieldset": {
+      borderColor: "yellow",
+      borderBottomColor: "white",
+    },
   },
-
 })(TextField);
 const useStyles = makeStyles((theme) => ({
   root: {
-  
     display: "flex",
     alignItems: "center",
-   
   },
   paper1: {
-   
     textAlignLast: "center",
     alignItems: "center",
     width: "500px",
@@ -96,15 +76,14 @@ const useStyles = makeStyles((theme) => ({
   margin: {
     margin: theme.spacing(1),
     width: "320px",
-    color:"white",
-    fontWeight:"800px"
+    color: "white",
+    fontWeight: "800px",
   },
- 
 
   button: {
     fontFamily: "Titillium Web, sans-serif",
     backgroundColor: "transparent",
-   
+
     fontSize: "18px",
     marginTop: "50px",
     color: "white",
@@ -113,31 +92,27 @@ const useStyles = makeStyles((theme) => ({
       color: "white",
       backgroundColor: "transparent",
     },
-   paddingLeft:"32px"
+    paddingLeft: "32px",
   },
 }));
 const Searchbar = () => {
   const classes = useStyles();
   const history = useHistory();
-  const [search,setserach]=React.useState('')
-  const handleChange=(e)=>{
-      setserach(e.target.value)
-      console.log("value",search)
-  }
-  const handleSubmit=(e)=>{
-
-  
+  const [search, setserach] = React.useState("");
+  const handleChange = (e) => {
+    setserach(e.target.value);
+    console.log("value", search);
+  };
+  const handleSubmit = (e) => {
     history.push({
-    pathname: `/current_openings`,
-    state: search,
-  });
-}
-const handleClick=(e)=>{
-    console.log("click=====>>>",search)
-//history.push('/current_openings')
-
-   
-}
+      pathname: `/current_openings`,
+      state: search,
+    });
+  };
+  const handleClick = (e) => {
+    console.log("click=====>>>", search);
+    //history.push('/current_openings')
+  };
   return (
     <Grid container className={classes.searchContainer}>
       <div
@@ -147,7 +122,6 @@ const handleClick=(e)=>{
           width: "70%",
         }}
       >
-       
         <div className={classes.paper1}>
           <CssTextField
             className={classes.margin}
@@ -155,9 +129,8 @@ const handleClick=(e)=>{
             placeholder="Search by job title,location and skills"
             onChange={handleChange}
           ></CssTextField>
-      
+
           <IconButton
-            // type="submit"
             className={classes.iconButton}
             aria-label="search"
             onClick={handleSubmit}
@@ -165,7 +138,6 @@ const handleClick=(e)=>{
             <SearchIcon />
           </IconButton>
         </div>
-      
       </div>
       <div
         style={{
@@ -174,14 +146,10 @@ const handleClick=(e)=>{
           width: "30%",
         }}
       >
-        <Button
-         className={classes.button}
-         type="submit"
-         onClick={handleClick}
-        >
+        <Button className={classes.button} type="submit" onClick={handleClick}>
           {" "}
           RECOMMENT ME A JOB
-          <WbIncandescentOutlinedIcon/>
+          <WbIncandescentOutlinedIcon />
         </Button>
       </div>
     </Grid>

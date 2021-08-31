@@ -11,8 +11,7 @@ const Home = () => {
       <Header />
       <Slider />
       <Searchbar />
-   
-    
+
       <CardComponent></CardComponent>
     </>
   );
