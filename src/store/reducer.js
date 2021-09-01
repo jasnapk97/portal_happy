@@ -3,6 +3,7 @@ import { COMMON } from "./constant";
 const initialState = {
   loading: false,
   users: [],
+  userslist: [],
   error: "",
 };
 
@@ -24,6 +25,12 @@ const reducer = (state = initialState, action) => {
         loading: false,
         user: [],
         error: action.payload,
+      };
+    case COMMON.FETCH_USERSLIST_SUCCESS:
+      return {
+        loading: false,
+        userslist: action.payload,
+        error: "",
       };
 
     default:

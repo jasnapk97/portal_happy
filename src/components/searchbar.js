@@ -5,12 +5,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import { Button, Grid } from "@material-ui/core";
 import WbIncandescentOutlinedIcon from "@material-ui/icons/WbIncandescentOutlined";
-import { connect } from "react-redux";
 import { withStyles, createTheme } from "@material-ui/core/styles";
-
 import { useHistory } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
-
 const CssTextField = withStyles({
   root: {
     "& label.Mui-focused": {

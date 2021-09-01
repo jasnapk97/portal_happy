@@ -20,7 +20,13 @@ export const fetchusersFailure = (error) => {
     payload: error,
   };
 };
-
+export const fetchuserslistSuccess = (userslist) => {
+  console.log("llllllll", userslist);
+  return {
+    type: COMMON.FETCH_USERSLIST_SUCCESS,
+    payload: userslist,
+  };
+};
 export const fetchUsers = (state) => {
   return (dispatch) => {
     dispatch(fetchusersRequest(state));
@@ -35,6 +41,22 @@ export const fetchUsers = (state) => {
       .catch((error) => {
         const errorMsg = error.message;
         dispatch(fetchusersFailure(errorMsg));
+      });
+  };
+};
+
+export const fetchUserslist = () => {
+  return (dispatch) => {
+    // dispatch(fetchusersRequest());
+    axios
+      .get("https://jsonplaceholder.typicode.com/posts")
+      .then((response) => {
+        const userslist = response;
+
+        dispatch(fetchuserslistSuccess(userslist));
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 };

@@ -79,8 +79,7 @@ const CardComponent = () => {
             <Grid
               container
               style={{
-                direction: "row",
-                backgroundColor: "#dedede",
+                marginBottom: "auto",
               }}
               spacing={3}
             >
