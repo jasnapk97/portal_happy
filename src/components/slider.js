@@ -1,46 +1,84 @@
 import React from "react";
-
-//import 'bootstrap/dist/css/bootstrap.css';
-import Carousel from "react-bootstrap-carousel";
-//import { Carousel } from 'react-bootstrap';
-import logo from "../assets/logo.png";
 import photo1 from "../assets/4-full.jpg";
+import photo2 from "../assets/3-full.jpg";
+import photo3 from "../assets/5-full.jpg";
+import photo4 from "../assets/9-full.jpg";
+import Carousel from "react-material-ui-carousel";
+
 const Slider = () => {
+  var items = [
+    {
+      name: (
+        <img
+          src={photo1}
+          style={{ width: "100%", height: "400px" }}
+          alt="Second slide"
+        />
+      ),
+      description: "Probably the most random thing you have ever seen!",
+    },
+    {
+      name: (
+        <img
+          src={photo2}
+          style={{ width: "100%", height: "400px" }}
+          alt="Second slide"
+        />
+      ),
+    },
+    {
+      name: (
+        <img
+          src={photo3}
+          style={{ width: "100%", height: "400px" }}
+          alt="Second slide"
+        />
+      ),
+    },
+    {
+      name: (
+        <img
+          src={photo4}
+          style={{ width: "100%", height: "400px" }}
+          alt="Second slide"
+        />
+      ),
+    },
+  ];
   return (
-    <>
-      <div style={{ width: "100%", height: "20%", backgroundColor: "" }}>
-        <div
-          id="carouselExampleIndicators"
-          class="carousel slide"
-          data-ride="carousel"
-        >
-          <div class="carousel-inner">
-            {/* <div class="carousel-item active">
-      <img class="d-block w-100" src={logo} alt="First slide"/>
-    </div> */}
-            <div class="carousel-item">
-              <img
-                src={photo1}
-                style={{ width: "100%", height: "300px" }}
-                alt="Second slide"
-              />
-            </div>
-            {/* <div class="carousel-item">
-      <img class="d-block w-100" src={logo} alt="Third slide"/>
-    </div> */}
-          </div>
-          {/* <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a> */}
-        </div>
-      </div>
-    </>
+    <Carousel
+      indicatorIconButtonProps={{
+        style: {
+          padding: "10px",
+          color: "white",
+        },
+      }}
+      activeIndicatorIconButtonProps={{
+        style: {
+          color: "yellowgreen",
+        },
+      }}
+      indicatorContainerProps={{
+        style: {
+          marginTop: "-62px",
+          textAlign: "right",
+          marginLeft: "-46px",
+        },
+      }}
+    >
+      {items.map((item, i) => (
+        <Item key={i} item={item} />
+      ))}
+    </Carousel>
   );
+
+  function Item(props) {
+    return (
+      <div style={{ width: "100%", height: "30%", marginTop: "-20px" }}>
+        <h2>{props.item.name}</h2>
+      </div>
+    );
+  }
 };
 
 export default Slider;
