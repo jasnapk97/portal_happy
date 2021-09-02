@@ -7,6 +7,11 @@ import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import Paper from "@material-ui/core/Paper";
+import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
+import StorageSharpIcon from "@material-ui/icons/StorageSharp";
+import FilterDramaSharpIcon from "@material-ui/icons/FilterDramaSharp";
+import EmojiObjectsOutlinedIcon from "@material-ui/icons/EmojiObjectsOutlined";
+import StorageRoundedIcon from '@material-ui/icons/StorageRounded';
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
@@ -106,6 +111,8 @@ const CardComponent = () => {
                 <Card className={classes.root} lg={3} sm={2}>
                   <CardActionArea>
                     <CardContent className={classes.cardcontent}>
+                    <StorageRoundedIcon className={classes.blockchain} />
+                    
                       <Typography gutterBottom variant="h5" component="h2">
                         Data Science
                       </Typography>
@@ -126,6 +133,7 @@ const CardComponent = () => {
                 <Card className={classes.root} lg={3} sm={2}>
                   <CardActionArea>
                     <CardContent className={classes.cardcontent}>
+                      <SettingsOutlinedIcon className={classes.blockchain} />
                       <Typography gutterBottom variant="h5" component="h2">
                         Dev Ops
                       </Typography>
@@ -145,6 +153,8 @@ const CardComponent = () => {
                 <Card className={classes.root} lg={3} sm={2}>
                   <CardActionArea>
                     <CardContent className={classes.cardcontent}>
+                      <StorageSharpIcon className={classes.blockchain} />
+
                       <Typography gutterBottom variant="h5" component="h2">
                         Programmable Network
                       </Typography>
@@ -167,6 +177,8 @@ const CardComponent = () => {
                 <Card className={classes.root} lg={3} sm={2}>
                   <CardActionArea>
                     <CardContent className={classes.cardcontent}>
+                      <FilterDramaSharpIcon className={classes.blockchain} />
+
                       <Typography gutterBottom variant="h5" component="h2">
                         Cloud Computing
                       </Typography>
@@ -186,6 +198,10 @@ const CardComponent = () => {
                 <Card className={classes.root} lg={3} sm={2}>
                   <CardActionArea>
                     <CardContent className={classes.cardcontent}>
+                      <EmojiObjectsOutlinedIcon
+                        className={classes.blockchain}
+                      />
+
                       <Typography gutterBottom variant="h5" component="h2">
                         Internet Of Things
                       </Typography>

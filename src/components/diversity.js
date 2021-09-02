@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 450,
   },
   picture: {
-    height: "94%",
+    // height: "94%",
     paddingTop: "80px",
   },
   image: {
@@ -56,7 +56,7 @@ const Diversity = () => {
             }}
           >
             <div>
-              <Paper className={classes.papercontent}>
+              <Grid className={classes.papercontent}>
                 <h3 style={{ fontWeight: 400, fontSize: "35px" }}>
                   Diversity@Work
                 </h3>
@@ -81,7 +81,7 @@ const Diversity = () => {
                   where people can be who they are and be their best,
                   professionally and personally.
                 </p>
-              </Paper>
+              </Grid>
             </div>
           </Grid>
           <Grid
@@ -89,7 +89,7 @@ const Diversity = () => {
               width: "70%",
             }}
           >
-            <Paper className={classes.picture}>
+            <Grid className={classes.picture}>
               <Grid
                 container
                 style={{
@@ -133,7 +133,7 @@ const Diversity = () => {
                   <img src={photo1} className={classes.image} />
                 </Grid>
               </Grid>
-            </Paper>
+            </Grid>
           </Grid>
         </Grid>
       </Paper>

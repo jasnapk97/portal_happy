@@ -108,7 +108,7 @@ const Searchbar = () => {
   };
   const handleClick = (e) => {
     console.log("click=====>>>", search);
-    //history.push('/current_openings')
+    history.push('/current_openings')
   };
   return (
     <Grid container className={classes.searchContainer}>
