@@ -8,6 +8,7 @@ import {
 
 import Home from "./containers/home";
 import CurrentOpenings from "./containers/currentOpenings";
+import Recommendedjob from "./containers/recommendjob";
 
 const Routes = () => {
   return (
@@ -19,63 +20,11 @@ const Routes = () => {
 						path="/current_openings"
 						component={CurrentOpenings}
 					/>
-        {/* <Route
+           <Route
 						exact
-						path="/forgot_password"
-						component={ForgotPassword}
+						path="/recommended_job"
+						component={Recommendedjob}
 					/>
-					<Route
-						exact
-						path="/reset_password"
-						component={ResetPassword}
-					/>
-					<PrivateRoute exact path="/user" component={User} />
-					<PrivateRoute
-						exact
-						path="/dashboard"
-						component={DashBoard}
-					/>
-					<PrivateRoute
-						exact
-						path="/manage-user/:id"
-						component={ManageUser}
-					/>
-					<PrivateRoute exact path="/admin" component={Admin} />
-					<PrivateRoute
-						exact
-						path="/admin-user-info/:id"
-						component={AdminUserInfo}
-					/>
-					<PrivateRoute
-						exact
-						path="/admin-add-member"
-						component={AddMemberForm}
-					/>
-					<PrivateRoute
-						exact
-						path="/tickets"
-						component={TicketsContainer}
-					/>
-					<PrivateRoute
-						exact
-						path="/ticket-details/:id"
-						component={TicketDetails}
-					/>
-					<PrivateRoute
-						exact
-						path="/settings"
-						component={SettingsContainer}
-					/>
-					<PrivateRoute
-						exact
-						path="/settings-edit"
-						component={SettingsEdit}
-					/>
-					<PrivateRoute
-						exact
-						path="/city-management"
-						component={CityManagement}
-					/> */}
       </Switch>
     </Router>
   );

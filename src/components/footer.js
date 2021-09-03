@@ -94,22 +94,19 @@ const Footer = () => {
         container
         style={{
           backgroundColor: "black",
-          //   width: "400px",
           height: "400px",
-        //   justifyContent: "space-between",
         }}
       >
-        <Grid style={{
-          backgroundColor: "black",
-          //   width: "400px",
-          height: "400px",
-        //   justifyContent: "space-between",
-        }}>
+        <Grid
+          style={{
+            backgroundColor: "black",
+            height: "400px",
+          }}
+        >
           <div
             style={{
               background: "black",
               padding: "85px",
-            //   marginTop: "-176px",
               backgroundColor: "black",
               maxWidth: "min-content",
             }}
@@ -134,11 +131,8 @@ const Footer = () => {
           <div
             style={{
               background: "black",
-                 padding: "85px",
-            //   marginTop: "-176px",
+              padding: "85px",
               backgroundColor: "black",
-
-              /* padding: 85px; */
               paddingTop: " 85px",
             }}
           >
