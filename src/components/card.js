@@ -97,11 +97,11 @@ const CardComponent = () => {
                         Block chain
                       </Typography>
                       <Typography variant="body2" color="black" component="p">
-                        "As Blockchain technologies continues to evolve rapidly,
+                        As Blockchain technologies continues to evolve rapidly,
                         Happiest Mind is one of the early implementor using
                         Hyperledger Fabric, Ethereum, R3 Corda and many others
                         in multiple business use cases. Happiest Minds continues
-                        to stay focus in Blockchain technologies.",
+                        to stay focus in Blockchain technologies.
                       </Typography>
                     </CardContent>
                   </CardActionArea>

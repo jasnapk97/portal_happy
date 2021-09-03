@@ -126,11 +126,12 @@ const CurrentOpenings = ({}) => {
   let { state } = useLocation();
   const [searchkey, setserach] = React.useState("");
   useEffect(() => {
+    dispatch(fetchUserslist());
+  },[]);
+  useEffect(() => {
     dispatch(fetchUsers(state));
   }, [state]);
-  useEffect(() => {
-    dispatch(fetchUserslist());
-  }, []);
+ 
   const handleChange = (e) => {
     setserach(e.target.value);
   };

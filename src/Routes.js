@@ -15,16 +15,8 @@ const Routes = () => {
     <Router>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route
-						exact
-						path="/current_openings"
-						component={CurrentOpenings}
-					/>
-           <Route
-						exact
-						path="/recommended_job"
-						component={Recommendedjob}
-					/>
+        <Route exact path="/current_openings" component={CurrentOpenings} />
+        <Route exact path="/recommended_job" component={Recommendedjob} />
       </Switch>
     </Router>
   );

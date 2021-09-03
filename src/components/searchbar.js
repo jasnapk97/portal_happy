@@ -108,7 +108,7 @@ const Searchbar = () => {
   };
   const handleClick = (e) => {
     console.log("click=====>>>", search);
-    history.push('/current_openings')
+    history.push('/recommended_job')
   };
   return (
     <Grid container className={classes.searchContainer}>
@@ -145,7 +145,7 @@ const Searchbar = () => {
       >
         <Button className={classes.button} type="submit" onClick={handleClick}>
           {" "}
-          RECOMMENT ME A JOB
+          RECOMMEND ME A JOB
           <WbIncandescentOutlinedIcon />
         </Button>
       </div>
