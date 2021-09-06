@@ -46,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
   },
+  paragraph: { color: "black", fontWeight: "500" },
   paper1: {
     textAlignLast: "center",
     alignItems: "center",
@@ -75,8 +76,10 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(1),
     width: "336px",
     flex: 1,
+  },fileicon:{
+    color:"yellowgreen"
   },
- 
+
   margin: {
     margin: theme.spacing(1),
     width: "320px",
@@ -84,14 +87,12 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "800px",
   },
 
- 
   iconButton: {
     color: "yellowgreen",
     "&:hover": {
-        color: "green",
-        backgroundColor: "transparent",
-      },
-
+      color: "green",
+      backgroundColor: "transparent",
+    },
   },
   button: {
     color: "black",
@@ -231,7 +232,7 @@ const Recommendedjob = () => {
                         ></Divider>
                       </Grid>
                       <Grid item>
-                        <FolderOutlinedIcon />
+                        <FolderOutlinedIcon className={classes.fileicon} />
                       </Grid>
                     </Grid>
                     <p style={{ fontSize: "10px" }}> {description}</p>
@@ -248,11 +249,11 @@ const Recommendedjob = () => {
                   <h3 style={{ color: "yellowgreen" }}>
                     How Job Recommender works?
                   </h3>
-                  <p style={{ color: "black", fontWeight: "500" }}>
+                  <p className={classes.paragraph}>
                     The job recommender is an AI powered feature which suggests
                     job opportunities based on your resume.
                   </p>
-                  <p style={{ color: "black", fontWeight: "500" }}>
+                  <p className={classes.paragraph}>
                     You just need to upload your resume and our recommender
                     engine will scan your resume and suggest suitable job
                     opportunities for you.

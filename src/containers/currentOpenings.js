@@ -7,15 +7,22 @@ import { useLocation } from "react-router-dom";
 import CardContent from "@material-ui/core/CardContent";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers, fetchUserslist } from "../store/action";
-import { Button, Paper, Typography } from "@material-ui/core";
+import { Button, Divider, Paper, Typography } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import { Grid } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import IconButton from "@material-ui/core/IconButton";
 import { makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
+import FormLabel from "@material-ui/core/FormLabel";
+import FormControl from "@material-ui/core/FormControl";
+import FormGroup from "@material-ui/core/FormGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import Checkbox from "@material-ui/core/Checkbox";
 
 import { withStyles, createTheme } from "@material-ui/core/styles";
+import Checkboxitems from "../components/checkbox";
 
 const CssTextField = withStyles({
   root: {
@@ -45,6 +52,11 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 345,
     margin: "10px",
   },
+  divider: {
+    width: "320px",
+    color: "black",
+    backgroundColor: "grey",
+  },
   margin: {
     margin: theme.spacing(1),
     width: "320px",
@@ -54,8 +66,8 @@ const useStyles = makeStyles((theme) => ({
 
   card: {
     display: "flow-root",
-    width: "100%",
-    marginTop: "-19px",
+    padding:"25px",
+    // width: "100%",
     backgroundColor: "#dedede",
     justifyContent: "space-evently",
     marginInline: "auto",
@@ -114,6 +126,15 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     marginTop: "50px",
   },
+  textbox: {
+    width: "100px",
+    marginTop: "10px",
+    "& .MuiOutlinedInput-input": {
+      padding: "0px",
+      height: "30px",
+      // backgroundColor:"pink"
+    },
+  },
 }));
 const CurrentOpenings = ({}) => {
   const classes = useStyles();
@@ -127,11 +148,11 @@ const CurrentOpenings = ({}) => {
   const [searchkey, setserach] = React.useState("");
   useEffect(() => {
     dispatch(fetchUserslist());
-  },[]);
+  }, []);
   useEffect(() => {
     dispatch(fetchUsers(state));
   }, [state]);
- 
+
   const handleChange = (e) => {
     setserach(e.target.value);
   };
@@ -141,103 +162,215 @@ const CurrentOpenings = ({}) => {
   const handleReset = (e) => {
     setserach("");
   };
+  const [checkbox, setCheckbox] = React.useState({
+    Bangalore: false,
+    Us: false,
+    Australia: false,
+  });
+
+  const { Bangalore, Us, Australia } = checkbox;
+ 
+  const   handleChecked = (event) => {
+    setCheckbox({ ...checkbox, [event.target.name]: event.target.checked });
+    console.log("value", checkbox);
+  };
+
+  // const handleChangeCheckbox = (event) => {
+  //   setCheckbox({ ...checkbox, [event.target.name]: event.target.checked });
+  //   console.log("value", checkbox);
+  // };
+  const checkboxItems = [
+    {
+      name: "Bangalore",
+      checkbox: setCheckbox.Bangalore,
+      label: "Bangalore",
+    },
+    { name: "Us", checkbox: setCheckbox.Us, label: "Us" },
+
+    {
+      name: "Australia",
+      checkbox: setCheckbox.Australia,
+      label: "Australia",
+    },
+  ];
+
   return (
     <>
       <Header></Header>
-
-      <Grid className={classes.card}>
-        <Grid>
-          <Typography>
-            {" "}
-            <h1>Current Openings</h1>
-          </Typography>
-        </Grid>
-        <div style={{ marginTop: "100px" }}>
-          <>
-            <div>
-              <div className={classes.paper1}>
-                <CssTextField
-                  className={classes.margin}
-                  id="custom-css-standard-input"
-                  placeholder="Keywords"
-                  value={searchkey}
-                  onChange={handleChange}
-                ></CssTextField>
-
-                <IconButton
-                  className={classes.iconButton}
-                  aria-label="search"
-                  onClick={handleSubmit}
-                >
-                  <SearchIcon />
-                </IconButton>
-              </div>
-              <Button className={classes.button} onClick={handleReset}>
-                RESET
-              </Button>
-            </div>
-            {userdata?.user ? (
-              <Grid item className={classes.itemgrid}>
-                <Card className={classes.root} lg={3} sm={2}>
-                  <CardActionArea>
-                    <CardContent className={classes.cardcontent}>
-                      <Typography gutterBottom variant="h5" component="h2">
-                        <h2
-                          style={{ fontFamily: "Titillium Web', sans-serif" }}
-                        >
-                          {userdata?.user?.id}
-                        </h2>
-                        {userdata?.user?.title}
-                      </Typography>
-                      <Typography variant="body2" color="black" component="p">
-                        {userdata?.user?.body}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
+      <Grid container style={{ backgroundColor: "" }}>
+        <Grid
+          item
+          style={{ width: "30%" }}
+        >
+          <Button style={{ height: "50px", width: "50%",backgroundColor:"yellowgreen" ,margin:"10px"}}>Clear All</Button>
+          <Paper style={{height:"100%"}}>
+            <Typography>By Experience (in Years)</Typography>
+            <Divider className={classes.divider}></Divider>
+            <Grid container>
+              <Grid item style={{ height: "50px", width: "50%" }}>
+                {" "}
+                <TextField
+                  id="outlined-basic"
+                  className={classes.textbox}
+                  variant="outlined"
+                ></TextField>
               </Grid>
-            ) : (
-              ""
-            )}
-            {userslist?.data
-              ? userslist?.data?.map((item) => {
-                  return (
-                    <>
-                      <Grid item className={classes.itemgrid}>
-                        <Card className={classes.root} lg={3} sm={2}>
-                          <CardActionArea>
-                            <CardContent className={classes.cardcontent}>
-                              <Typography
-                                gutterBottom
-                                variant="h5"
-                                component="h2"
-                              >
-                                <h2
-                                  style={{
-                                    fontFamily: "Titillium Web', sans-serif",
-                                  }}
-                                >
-                                  {item?.id}
-                                </h2>
-                                {item?.title}
-                              </Typography>
-                              <Typography
-                                variant="body2"
-                                color="black"
-                                component="p"
-                              >
-                                {item?.body}
-                              </Typography>
-                            </CardContent>
-                          </CardActionArea>
-                        </Card>
-                      </Grid>
-                    </>
-                  );
-                })
-              : ""}
-          </>
-        </div>
+              <Grid item style={{ width: "50%" }}>
+                <TextField
+                  id="outlined-basic"
+                  className={classes.textbox}
+                  variant="outlined"
+                ></TextField>
+              </Grid>
+            </Grid>
+            <Grid>
+              <Typography>Location</Typography>
+              <FormGroup>
+                {/* <Checkboxitems
+                  // open={exportPopupOpen}
+                  handleChangeCheckbox={handleChangeCheckbox}
+                  checkboxtItems={checkboxItems}
+                /> */}
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={Bangalore}
+                      onChange={handleChecked}
+                      name="Bangalore"
+                      color="primary"
+                    />
+                  }
+                  label="Bangalore"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={Us}
+                      onChange={handleChecked}
+                      name="Us"
+                      color="primary"
+                    />
+                  }
+                  label="Us"
+                />
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={Australia}
+                      onChange={handleChecked}
+                      name="Australia"
+                      color="primary"
+                    />
+                  }
+                  label="Australia"
+                />
+              </FormGroup>
+            </Grid>
+          </Paper>
+        </Grid>
+        <Grid item style={{ width: "70%" }}>
+          <Grid className={classes.card}>
+            <Grid>
+              <Typography>
+                {" "}
+                <h1>Current Openings</h1>
+              </Typography>
+            </Grid>
+            <div style={{ marginTop: "100px" }}>
+              <>
+                <div>
+                  <div className={classes.paper1}>
+                    <CssTextField
+                      className={classes.margin}
+                      id="custom-css-standard-input"
+                      placeholder="Keywords"
+                      value={searchkey}
+                      onChange={handleChange}
+                    ></CssTextField>
+
+                    <IconButton
+                      className={classes.iconButton}
+                      aria-label="search"
+                      onClick={handleSubmit}
+                    >
+                      <SearchIcon />
+                    </IconButton>
+                  </div>
+                  <Button className={classes.button} onClick={handleReset}>
+                    RESET
+                  </Button>
+                </div>
+                {userdata?.user ? (
+                  <Grid item className={classes.itemgrid}>
+                    <Card className={classes.root} lg={3} sm={2}>
+                      <CardActionArea>
+                        <CardContent className={classes.cardcontent}>
+                          <Typography gutterBottom variant="h5" component="h2">
+                            <h2
+                              style={{
+                                fontFamily: "Titillium Web', sans-serif",
+                              }}
+                            >
+                              {userdata?.user?.id}
+                            </h2>
+                            {userdata?.user?.title}
+                          </Typography>
+                          <Typography
+                            variant="body2"
+                            color="black"
+                            component="p"
+                          >
+                            {userdata?.user?.body}
+                          </Typography>
+                        </CardContent>
+                      </CardActionArea>
+                    </Card>
+                  </Grid>
+                ) : (
+                  ""
+                )}
+                {userslist?.data
+                  ? userslist?.data?.map((item) => {
+                      return (
+                        <>
+                          <Grid item className={classes.itemgrid}>
+                            <Card className={classes.root} lg={3} sm={2}>
+                              <CardActionArea>
+                                <CardContent className={classes.cardcontent}>
+                                  <Typography
+                                    gutterBottom
+                                    variant="h5"
+                                    component="h2"
+                                  >
+                                    <h2
+                                      style={{
+                                        fontFamily:
+                                          "Titillium Web', sans-serif",
+                                      }}
+                                    >
+                                      {item?.id}
+                                    </h2>
+                                    {item?.title}
+                                  </Typography>
+                                  <Typography
+                                    variant="body2"
+                                    color="black"
+                                    component="p"
+                                  >
+                                    {item?.body}
+                                  </Typography>
+                                </CardContent>
+                              </CardActionArea>
+                            </Card>
+                          </Grid>
+                        </>
+                      );
+                    })
+                  : ""}
+              </>
+            </div>
+          </Grid>
+        </Grid>
       </Grid>
     </>
   );
