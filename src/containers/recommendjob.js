@@ -1,19 +1,13 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 import CardComponent from "../components/card";
-import Diversity from "../components/diversity";
 import Footer from "../components/footer";
 import Header from "../components/header";
-import Searchbar from "../components/searchbar";
-import Slider from "../components/slider";
 import IconButton from "@material-ui/core/IconButton";
 import { makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import { Button, Divider, Grid, Paper } from "@material-ui/core";
-import WbIncandescentOutlinedIcon from "@material-ui/icons/WbIncandescentOutlined";
 import { withStyles, createTheme } from "@material-ui/core/styles";
 import FolderOutlinedIcon from "@material-ui/icons/FolderOutlined";
-
 import TextField from "@material-ui/core/TextField";
 const CssTextField = withStyles({
   root: {
@@ -76,8 +70,9 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(1),
     width: "336px",
     flex: 1,
-  },fileicon:{
-    color:"yellowgreen"
+  },
+  fileicon: {
+    color: "yellowgreen",
   },
 
   margin: {

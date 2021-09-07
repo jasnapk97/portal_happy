@@ -83,7 +83,7 @@ const Header = () => {
                 <Divider className={classes.divider} orientation="vertical" />
               </Button>
          
-              <Button color="black" className={classes.button}>
+              <Button color="black" className={classes.button} href="/benefits">
                 {" "}
                 Benefits
                 <Divider className={classes.divider} orientation="vertical" />

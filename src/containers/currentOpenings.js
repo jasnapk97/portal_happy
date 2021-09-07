@@ -22,7 +22,6 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 import Checkbox from "@material-ui/core/Checkbox";
 
 import { withStyles, createTheme } from "@material-ui/core/styles";
-import Checkboxitems from "../components/checkbox";
 
 const CssTextField = withStyles({
   root: {
