@@ -174,25 +174,6 @@ const CurrentOpenings = ({}) => {
     console.log("value", checkbox);
   };
 
-  // const handleChangeCheckbox = (event) => {
-  //   setCheckbox({ ...checkbox, [event.target.name]: event.target.checked });
-  //   console.log("value", checkbox);
-  // };
-  const checkboxItems = [
-    {
-      name: "Bangalore",
-      checkbox: setCheckbox.Bangalore,
-      label: "Bangalore",
-    },
-    { name: "Us", checkbox: setCheckbox.Us, label: "Us" },
-
-    {
-      name: "Australia",
-      checkbox: setCheckbox.Australia,
-      label: "Australia",
-    },
-  ];
-
   return (
     <>
       <Header></Header>
@@ -225,11 +206,6 @@ const CurrentOpenings = ({}) => {
             <Grid>
               <Typography>Location</Typography>
               <FormGroup>
-                {/* <Checkboxitems
-                  // open={exportPopupOpen}
-                  handleChangeCheckbox={handleChangeCheckbox}
-                  checkboxtItems={checkboxItems}
-                /> */}
                 <FormControlLabel
                   control={
                     <Checkbox

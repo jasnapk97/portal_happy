@@ -73,6 +73,7 @@ const useStyles = makeStyles((theme) => ({
     textAlignLast: "center",
     paddingTop: "8px",
     paddingLeft: "13px",
+    height:"40px"
   },
 
   healthoptions: {
@@ -81,6 +82,7 @@ const useStyles = makeStyles((theme) => ({
     textAlignLast: "center",
     paddingTop: "8px",
     paddingLeft: "13px",
+    height:"40px"
   },
   parentingoptions: {
     backgroundColor: "#c0daee",
@@ -88,6 +90,7 @@ const useStyles = makeStyles((theme) => ({
     textAlignLast: "center",
     paddingTop: "8px",
     paddingLeft: "13px",
+    height:"40px"
   },
   enrichedoptions: {
     backgroundColor: "#eeebc1",
@@ -95,12 +98,12 @@ const useStyles = makeStyles((theme) => ({
     textAlignLast: "center",
     paddingTop: "8px",
     paddingLeft: "13px",
+    height:"40px"
   },
   paper: {
     width: "121px",
     margin: "5px",
     backgroundColor: "#e7becf",
-
     padding: "25px",
   },
 }));

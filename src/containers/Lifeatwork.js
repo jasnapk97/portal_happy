@@ -109,37 +109,23 @@ const useStyles = makeStyles((theme) => ({
 const Lifeatwork = ({}) => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const history = useHistory();
-
-  let { state } = useLocation();
-
-  useEffect(() => {
-    dispatch(fetchUserslist());
-  }, []);
-  useEffect(() => {
-    dispatch(fetchUsers(state));
-  }, [state]);
+  
 
   return (
     <>
       <Header></Header>
       <Grid className={classes.container}>
         <h3 className={classes.h3}> Life@Work</h3>
-        <p className={classes.paragraph}>
-        6 reasons why you should be here.
-        </p>
+        <p className={classes.paragraph}>6 reasons why you should be here.</p>
       </Grid>
-      <Mindspeak/>
+      <Mindspeak />
       <Grid className={classes.container}>
-      <h3 className={classes.h3}> MindSpeak</h3>
-      <Grid container style={{justifyContent:"center"}}>
-<Mindspeakslider/>
-
+        <h3 className={classes.h3}> MindSpeak</h3>
+        <Grid container style={{ justifyContent: "center" }}>
+          <Mindspeakslider />
+        </Grid>
       </Grid>
-      </Grid>
-      <Footer/>
-     
-     
+      <Footer />
     </>
   );
 };

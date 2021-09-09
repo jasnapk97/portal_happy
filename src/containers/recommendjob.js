@@ -1,5 +1,4 @@
 import React from "react";
-import CardComponent from "../components/card";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import IconButton from "@material-ui/core/IconButton";
@@ -150,6 +149,10 @@ const Recommendedjob = () => {
   const handleReset = (e) => {
     setserach("");
   };
+
+  const fileUpload=()=>{
+    console.log("lakjdh")
+  }
   let description =
     " For best results, upload *.doc/*.docx/*.pdf/*.txt format files only (File size should be < 2MB)";
   return (
@@ -227,7 +230,7 @@ const Recommendedjob = () => {
                         ></Divider>
                       </Grid>
                       <Grid item>
-                        <FolderOutlinedIcon className={classes.fileicon} />
+                        <FolderOutlinedIcon onClick={fileUpload}  className={classes.fileicon} />
                       </Grid>
                     </Grid>
                     <p style={{ fontSize: "10px" }}> {description}</p>
