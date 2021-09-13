@@ -4,7 +4,7 @@ import Header from "../components/header";
 import { useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { fetchUsers, fetchUserslist } from "../store/action";
-import { Paper } from "@material-ui/core";
+
 import { useHistory } from "react-router-dom";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -26,90 +26,10 @@ const useStyles = makeStyles((theme) => ({
   paragraph: {
     width: "700px",
   },
-  benefitsmatrix: {
-    fontSize: "50px",
-    fontWeight: "400",
-  },
-  second_container: {
-    marginTop: "-50px",
-    paddingLeft: "71px",
-  },
-  third_container: {
-    justifyContent: "space-around",
-  },
-  general: {
-    color: "white",
-    backgroundColor: "#7754C4;",
-    paddingTop: "25px",
-    margin: "1pc",
-    height: "58px",
-    paddingLeft: "13px",
-  },
-  health: {
-    color: "white",
-    backgroundColor: "#49B6BA",
-    paddingTop: "25px",
-    margin: "1pc",
-    height: "58px",
-    paddingLeft: "13px",
-  },
-  parenting: {
-    color: "white",
-    backgroundColor: "#2D85C6",
-    paddingTop: "25px",
-    margin: "1pc",
-    height: "58px",
-    paddingLeft: "13px",
-  },
-  enriched: {
-    color: "white",
-    backgroundColor: "#C6BA2D",
-    paddingTop: "25px",
-    margin: "1pc",
-    height: "58px",
-    paddingLeft: "13px",
-  },
-  options: {
-    backgroundColor: "#d6cced",
-    margin: "1pc",
-    textAlignLast: "center",
-    paddingTop: "8px",
-    paddingLeft: "13px",
-  },
-
-  healthoptions: {
-    backgroundColor: "#c9e9ea",
-    margin: "1pc",
-    textAlignLast: "center",
-    paddingTop: "8px",
-    paddingLeft: "13px",
-  },
-  parentingoptions: {
-    backgroundColor: "#c0daee",
-    margin: "1pc",
-    textAlignLast: "center",
-    paddingTop: "8px",
-    paddingLeft: "13px",
-  },
-  enrichedoptions: {
-    backgroundColor: "#eeebc1",
-    margin: "1pc",
-    textAlignLast: "center",
-    paddingTop: "8px",
-    paddingLeft: "13px",
-  },
-  paper: {
-    width: "121px",
-    margin: "5px",
-    backgroundColor: "#e7becf",
-
-    padding: "25px",
-  },
 }));
 const Lifeatwork = ({}) => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  
 
   return (
     <>

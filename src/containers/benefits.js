@@ -73,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
     textAlignLast: "center",
     paddingTop: "8px",
     paddingLeft: "13px",
-    height:"40px"
+    height: "40px",
   },
 
   healthoptions: {
@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
     textAlignLast: "center",
     paddingTop: "8px",
     paddingLeft: "13px",
-    height:"40px"
+    height: "40px",
   },
   parentingoptions: {
     backgroundColor: "#c0daee",
@@ -90,7 +90,7 @@ const useStyles = makeStyles((theme) => ({
     textAlignLast: "center",
     paddingTop: "8px",
     paddingLeft: "13px",
-    height:"40px"
+    height: "40px",
   },
   enrichedoptions: {
     backgroundColor: "#eeebc1",
@@ -98,10 +98,10 @@ const useStyles = makeStyles((theme) => ({
     textAlignLast: "center",
     paddingTop: "8px",
     paddingLeft: "13px",
-    height:"40px"
+    height: "40px",
   },
   paper: {
-    width: "121px",
+    width: "200px",
     margin: "5px",
     backgroundColor: "#e7becf",
     padding: "25px",
@@ -120,7 +120,63 @@ const Benefits = ({}) => {
   useEffect(() => {
     dispatch(fetchUsers(state));
   }, [state]);
+  var items = [
+    {
+      name: "Leave during Miscarriage",
+    },
+    {
+      name: "Surrogacy leave",
+    },
+    {
+      name: "Meternity Benefits",
+    },
+    {
+      name: "AURA-Women's Club",
+    },
+    {
+      name: "Pre/Post Meternity Leave",
+    },
+    {
+      name: "Creche Facility",
+    },
+    {
+      name: "Pre/Post Meternity Leave",
+    },
+    {
+      name: "Medical Rooms",
+    },
+    {
+      name: "Referral Bonus",
+    },
+  ];
+  var generalbenefits = [
+    { name: "Online library" },
+    { name: "Laptop Policy" },
+    { name: "Employee/Business Referral Policy" },
+    { name: " Joy Fund For Team Outing" },
+    { name: "Loan/Salary Advance" },
+    { name: "Flexible Expense Plan" },
+    { name: "National Pension Scheme" },
+    { name: " No Forced Retirement Age" },
+    { name: "Cab Facility" },
+  ];
 
+  var healthbenefits = [
+    { name: "In-House Yoga" },
+    { name: " Corporate Tie-Ups/Discount" },
+    { name: "Dormitory" },
+  ];
+
+  var parenting = [
+    { name: "Creche Tie-Ups" },
+    { name: " Long Term leaves" },
+    { name: "Bring Your child to work" },
+  ];
+  var enriched = [
+    { name: " Work from home Policy" },
+    { name: "    Exhaustive Leave Policy" },
+    { name: "Flexi Timing" },
+  ];
   return (
     <>
       <Header></Header>
@@ -136,89 +192,70 @@ const Benefits = ({}) => {
         <h3 className={classes.benefitsmatrix}> Benefits Matrix</h3>
         <Grid container>
           <Grid item style={{ width: "25%" }}>
-            {" "}
             <Paper className={classes.general}>General Benefits</Paper>
-            <Grid>
-              <Paper className={classes.options}>Online library</Paper>
-            </Grid>
-            <Grid>
-              <Paper className={classes.options}>Laptop Policy</Paper>
-            </Grid>
-            <Grid>
-              <Paper className={classes.options}>
-                Employee/Business Referral Policy
-              </Paper>
-            </Grid>
-            <Grid>
-              <Paper className={classes.options}>
-                Joy Fund For Team Outing
-              </Paper>
-            </Grid>
-            <Grid>
-              <Paper className={classes.options}>Loan/Salary Advance</Paper>
-            </Grid>
-            <Grid>
-              <Paper className={classes.options}>Flexible Expense Plan</Paper>
-            </Grid>
-            <Grid>
-              <Paper className={classes.options}>National Pension Scheme</Paper>
-            </Grid>
-            <Grid>
-              <Paper className={classes.options}>
-                No Forced Retirement Age
-              </Paper>
-            </Grid>
-            <Grid>
-              <Paper className={classes.options}>Cab Facility</Paper>
-            </Grid>
+            {generalbenefits
+              ? generalbenefits.map((item) => {
+                  return (
+                    <>
+                      <Grid>
+                        <Paper className={classes.options}>{item.name}</Paper>
+                      </Grid>{" "}
+                    </>
+                  );
+                })
+              : ""}
           </Grid>
           <Grid item style={{ width: "25%" }}>
             <Paper className={classes.health}> Health Benefits</Paper>
-            <Grid>
-              <Paper className={classes.healthoptions}>In-House Yoga</Paper>
-            </Grid>
-            <Grid>
-              <Paper className={classes.healthoptions}>
-                Corporate Tie-Ups/Discount
-              </Paper>
-            </Grid>
-            <Grid>
-              <Paper className={classes.healthoptions}>Dormitory</Paper>
-            </Grid>
+            {healthbenefits
+              ? healthbenefits.map((item) => {
+                  return (
+                    <>
+                      <Grid>
+                        <Paper className={classes.healthoptions}>
+                          {item.name}
+                        </Paper>
+                      </Grid>{" "}
+                    </>
+                  );
+                })
+              : ""}
           </Grid>
           <Grid item style={{ width: "25%" }}>
             <Paper className={classes.parenting}>
               {" "}
               Parenting Related Benefits{" "}
             </Paper>
-            <Grid>
-              <Paper className={classes.parentingoptions}>Creche Tie-Ups</Paper>
-            </Grid>
-            <Grid>
-              <Paper className={classes.parentingoptions}>
-                Long Term leaves
-              </Paper>
-            </Grid>
-            <Grid>
-              <Paper className={classes.parentingoptions}>
-                Bring Your child to work
-              </Paper>
-            </Grid>
+            {parenting
+              ? parenting.map((item) => {
+                  return (
+                    <>
+                      <Grid>
+                        <Paper className={classes.parentingoptions}>
+                          {item.name}
+                        </Paper>
+                      </Grid>
+                    </>
+                  );
+                })
+              : ""}
           </Grid>
           <Grid item style={{ width: "25%" }}>
             <Paper className={classes.enriched}> Enriched Personal Life</Paper>
             <Grid>
-              <Paper className={classes.enrichedoptions}>
-                Work from home Policy
-              </Paper>
-            </Grid>
-            <Grid>
-              <Paper className={classes.enrichedoptions}>
-                Exhaustive Leave Policy
-              </Paper>
-            </Grid>
-            <Grid>
-              <Paper className={classes.enrichedoptions}>Flexi Timing</Paper>
+              {enriched
+                ? enriched.map((item) => {
+                    return (
+                      <>
+                        <Grid>
+                          <Paper className={classes.enrichedoptions}>
+                            {item.name}
+                          </Paper>
+                        </Grid>
+                      </>
+                    );
+                  })
+                : ""}
             </Grid>
           </Grid>
         </Grid>
@@ -229,36 +266,18 @@ const Benefits = ({}) => {
         </Grid>
 
         <Grid container>
-          <Grid item xs={4}>
-            <Paper className={classes.paper}>Leave during Miscarriage</Paper>
-          </Grid>
-          <Grid item xs={4}>
-            <Paper className={classes.paper}>Surrogacy leave</Paper>
-          </Grid>
-          <Grid item xs={4}>
-            <Paper className={classes.paper}>Meternity Benefits</Paper>
-          </Grid>
-          <Grid item xs={4}>
-            <Paper className={classes.paper}>AURA-Women's Club</Paper>
-          </Grid>
-          <Grid item xs={4}>
-            <Paper className={classes.paper}>Referral Bonus</Paper>
-          </Grid>
-          <Grid item xs={4}>
-            <Paper className={classes.paper}>AURA-Women's Club</Paper>
-          </Grid>
-          <Grid item xs={4}>
-            <Paper className={classes.paper}>Pre/Post Meternity Leave</Paper>
-          </Grid>
-          <Grid item xs={4}>
-            <Paper className={classes.paper}>Creche Facility</Paper>
-          </Grid>
-          <Grid item xs={4}>
-            <Paper className={classes.paper}>Pre/Post Meternity Leave</Paper>
-          </Grid>
-          <Grid item xs={4}>
-            <Paper className={classes.paper}>Medical Rooms</Paper>
-          </Grid>
+          {items
+            ? items.map((item) => {
+                return (
+                  <>
+                    {" "}
+                    <Grid item xs={4}>
+                      <Paper className={classes.paper}>{item.name}</Paper>
+                    </Grid>{" "}
+                  </>
+                );
+              })
+            : ""}
         </Grid>
       </Grid>
       <Footer></Footer>
