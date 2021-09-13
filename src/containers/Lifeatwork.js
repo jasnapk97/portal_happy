@@ -1,11 +1,6 @@
-import React, { useEffect, useState } from "react";
-
+import React from "react";
 import Header from "../components/header";
-import { useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { fetchUsers, fetchUserslist } from "../store/action";
-
-import { useHistory } from "react-router-dom";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Footer from "../components/footer";
@@ -25,11 +20,11 @@ const useStyles = makeStyles((theme) => ({
   },
   paragraph: {
     width: "700px",
+    fontWeight: "600",
   },
 }));
 const Lifeatwork = ({}) => {
   const classes = useStyles();
-  const dispatch = useDispatch();
 
   return (
     <>

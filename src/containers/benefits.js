@@ -143,10 +143,16 @@ const Benefits = ({}) => {
       name: "Pre/Post Meternity Leave",
     },
     {
+      name: "Security and safety policy",
+    },
+    {
       name: "Medical Rooms",
     },
     {
       name: "Referral Bonus",
+    },
+    {
+      name: "Specific women-oriented programs ",
     },
   ];
   var generalbenefits = [
