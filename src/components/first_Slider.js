@@ -12,7 +12,7 @@ const Slider = () => {
         <img
           src={photo1}
           style={{ width: "100%", height: "400px" }}
-          alt="Second slide"
+          alt="first slide"
         />
       ),
       description: "Probably the most random thing you have ever seen!",
@@ -31,7 +31,7 @@ const Slider = () => {
         <img
           src={photo3}
           style={{ width: "100%", height: "400px" }}
-          alt="Second slide"
+          alt="third slide"
         />
       ),
     },
@@ -40,7 +40,7 @@ const Slider = () => {
         <img
           src={photo4}
           style={{ width: "100%", height: "400px" }}
-          alt="Second slide"
+          alt="fourth slide"
         />
       ),
     },
@@ -65,6 +65,7 @@ const Slider = () => {
           marginLeft: "-46px",
         },
       }}
+      navButtonsAlwaysInvisible="false"
     >
       {items.map((item, i) => (
         <Item key={i} item={item} />

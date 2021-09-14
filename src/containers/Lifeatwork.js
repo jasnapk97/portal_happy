@@ -4,8 +4,8 @@ import { useDispatch } from "react-redux";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Footer from "../components/footer";
-import Mindspeak from "../components/mindspeak";
-import Mindspeakslider from "../components/mindspeakslider";
+import MindSpeak from "../components/mindSpeak";
+import MindSpeakSlider from "../components/mindSpeakSlider";
 
 const useStyles = makeStyles((theme) => ({
   h3: {
@@ -33,11 +33,11 @@ const Lifeatwork = ({}) => {
         <h3 className={classes.h3}> Life@Work</h3>
         <p className={classes.paragraph}>6 reasons why you should be here.</p>
       </Grid>
-      <Mindspeak />
+      <MindSpeak />
       <Grid className={classes.container}>
         <h3 className={classes.h3}> MindSpeak</h3>
         <Grid container style={{ justifyContent: "center" }}>
-          <Mindspeakslider />
+          <MindSpeakSlider />
         </Grid>
       </Grid>
       <Footer />

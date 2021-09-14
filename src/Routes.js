@@ -8,7 +8,7 @@ import {
 
 import Home from "./containers/home";
 import CurrentOpenings from "./containers/currentOpenings";
-import Recommendedjob from "./containers/recommendjob";
+import Recommendedjob from "./containers/recommendJob";
 import Benefits from "./containers/benefits";
 import Lifeatwork from "./containers/Lifeatwork";
 

@@ -1,4 +1,4 @@
-import { Typography } from "@material-ui/core";
+import { Button, FormLabel, Typography } from "@material-ui/core";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid } from "@material-ui/core";
@@ -53,7 +53,20 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       color: "black",
       backgroundColor: "white",
+     
+      
     },
+  },
+  button:{
+    backgroundColor: "white",
+    color: "black",
+    "&:hover": {
+      color: "black",
+      backgroundColor: "white",
+     
+      
+    },
+// display:"none"
   },
   blockchain: {
     color: "yellowgreen",
@@ -62,7 +75,40 @@ const useStyles = makeStyles((theme) => ({
 }));
 const CardComponent = () => {
   const classes = useStyles();
+  const [style, setStyle] = React.useState({display: 'none'});
+  const [styledatascience,setStyleData]=React.useState({display: 'none'});
+  const [styledevops,setStyleDevops]=React.useState({display: 'none'});
+  const [styleprograms,setStylePrograms]=React.useState({display: 'none'});
+  const [stylecloud,setStyleCloud]=React.useState({display: 'none'});
+  const [styleinternet,setStyleInternet]=React.useState({display: 'none'});
 
+
+
+  const blockchainMore=()=>{
+    console.log("clicked")
+    window.open("https://www.happiestminds.com/services/blockchain-solutions-services/")
+  }
+  const datascienceMore=()=>{
+    console.log("clicked")
+    window.open("https://www.happiestminds.com/services/data-science/")
+  }
+  const devopsMore=()=>{
+    console.log("clicked")
+    window.open("https://www.happiestminds.com/services/devops-solutions/")
+  }
+  
+  const programsMore=()=>{
+    console.log("clicked")
+    window.open("https://www.happiestminds.com/services/sdn-nfv/")
+  }
+  const cloudMore=()=>{
+    console.log("clicked")
+    window.open("https://www.happiestminds.com/services/cloud-computing/")
+  }
+  const internetMore=()=>{
+    console.log("clicked")
+    window.open("https://www.happiestminds.com/services/internet-of-things/")
+  }
   return (
     <>
       <Paper style={{ backgroundColor: "#dedede" }}>
@@ -89,10 +135,22 @@ const CardComponent = () => {
               spacing={3}
             >
               <Grid item className={classes.itemgrid} xs={3}>
-                <Card className={classes.root} lg={3} sm={2}>
-                  <CardActionArea>
-                    <CardContent className={classes.cardcontent}>
+                <Card className={classes.root} lg={3} sm={2}   onMouseOver={e => {
+                     setStyle({display: 'block'});
+                 }}
+                 
+                 onMouseLeave={e => {
+                  setStyle({display: 'none'})
+              }}>
+                  <CardActionArea >
+                    <CardContent className={classes.cardcontent} >
+                      <Grid container style={{justifyContent:"space-between"}}>
+                        <Grid item>
                       <WidgetsOutlinedIcon className={classes.blockchain} />
+                      </Grid>
+                      <Grid item>
+                      <Button className={classes.button} style={style} onClick={blockchainMore}>More</Button>
+                      </Grid>  </Grid>
                       <Typography gutterBottom variant="h5" component="h2">
                         Block chain
                       </Typography>
@@ -108,10 +166,24 @@ const CardComponent = () => {
                 </Card>
               </Grid>
               <Grid item className={classes.itemgrid} xs={3}>
-                <Card className={classes.root} lg={3} sm={2}>
+                <Card className={classes.root} lg={3} sm={2}  onMouseOver={e => {
+                     setStyleData({display: 'block'});
+                 }}
+                 
+                 onMouseLeave={e => {
+                  setStyleData({display: 'none'})
+              }}>
                   <CardActionArea>
                     <CardContent className={classes.cardcontent}>
-                    <StorageRoundedIcon className={classes.blockchain} />
+                    <Grid container style={{justifyContent:"space-between"}}>
+                        <Grid item>
+                        <StorageRoundedIcon className={classes.blockchain} />
+                      </Grid>
+                      <Grid item>
+                      <Button className={classes.button} style={styledatascience} onClick={datascienceMore}>More</Button>
+                      </Grid>  </Grid>
+
+                   
                     
                       <Typography gutterBottom variant="h5" component="h2">
                         Data Science
@@ -130,10 +202,24 @@ const CardComponent = () => {
                 </Card>
               </Grid>
               <Grid item className={classes.itemgrid} xs={3}>
-                <Card className={classes.root} lg={3} sm={2}>
+                <Card className={classes.root} lg={3} sm={2}
+                onMouseOver={e => {
+                  setStyleDevops({display: 'block'});
+              }}
+              
+              onMouseLeave={e => {
+                setStyleDevops({display: 'none'})
+           }}>
                   <CardActionArea>
                     <CardContent className={classes.cardcontent}>
-                      <SettingsOutlinedIcon className={classes.blockchain} />
+                    <Grid container style={{justifyContent:"space-between"}}>
+                        <Grid item>
+                        <SettingsOutlinedIcon className={classes.blockchain} />
+                      </Grid>
+                      <Grid item>
+                      <Button className={classes.button} style={styledevops} onClick={devopsMore}>More</Button>
+                      </Grid>  </Grid>
+                      
                       <Typography gutterBottom variant="h5" component="h2">
                         Dev Ops
                       </Typography>
@@ -150,10 +236,24 @@ const CardComponent = () => {
                 </Card>
               </Grid>
               <Grid item className={classes.itemgrid} xs={3}>
-                <Card className={classes.root} lg={3} sm={2}>
+                <Card className={classes.root} lg={3} sm={2}
+                onMouseOver={e => {
+                  setStylePrograms({display: 'block'});
+              }}
+              
+              onMouseLeave={e => {
+                setStylePrograms({display: 'none'})
+           }}>
                   <CardActionArea>
                     <CardContent className={classes.cardcontent}>
-                      <StorageSharpIcon className={classes.blockchain} />
+                    <Grid container style={{justifyContent:"space-between"}}>
+                        <Grid item>
+                        <StorageSharpIcon className={classes.blockchain} />
+                      </Grid>
+                      <Grid item>
+                      <Button className={classes.button} style={styleprograms} onClick={programsMore}>More</Button>
+                      </Grid>  </Grid>
+                     
 
                       <Typography gutterBottom variant="h5" component="h2">
                         Programmable Network
@@ -174,10 +274,24 @@ const CardComponent = () => {
                 </Card>
               </Grid>
               <Grid item className={classes.itemgrid} xs={3}>
-                <Card className={classes.root} lg={3} sm={2}>
+                <Card className={classes.root} lg={3} sm={2}
+                 onMouseOver={e => {
+                  setStyleCloud({display: 'block'});
+              }}
+              
+              onMouseLeave={e => {
+                setStyleCloud({display: 'none'})
+           }}>
                   <CardActionArea>
                     <CardContent className={classes.cardcontent}>
-                      <FilterDramaSharpIcon className={classes.blockchain} />
+                    <Grid container style={{justifyContent:"space-between"}}>
+                        <Grid item>
+                        <FilterDramaSharpIcon className={classes.blockchain} />
+                      </Grid>
+                      <Grid item>
+                      <Button className={classes.button} style={stylecloud} onClick={cloudMore}>More</Button>
+                      </Grid>  </Grid>
+                      
 
                       <Typography gutterBottom variant="h5" component="h2">
                         Cloud Computing
@@ -195,12 +309,27 @@ const CardComponent = () => {
               </Grid>
 
               <Grid item className={classes.itemgrid} xs={3}>
-                <Card className={classes.root} lg={3} sm={2}>
+                <Card className={classes.root} lg={3} sm={2}
+                   onMouseOver={e => {
+                    setStyleInternet({display: 'block'});
+                }}
+                
+                onMouseLeave={e => {
+                  setStyleInternet({display: 'none'})
+             }}
+                >
                   <CardActionArea>
                     <CardContent className={classes.cardcontent}>
-                      <EmojiObjectsOutlinedIcon
+                    <Grid container style={{justifyContent:"space-between"}}>
+                        <Grid item>
+                        <EmojiObjectsOutlinedIcon
                         className={classes.blockchain}
                       />
+                      </Grid>
+                      <Grid item>
+                      <Button className={classes.button} style={styleinternet} onClick={internetMore}>More</Button>
+                      </Grid>  </Grid>
+                    
 
                       <Typography gutterBottom variant="h5" component="h2">
                         Internet Of Things

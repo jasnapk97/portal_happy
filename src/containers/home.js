@@ -5,7 +5,7 @@ import Diversity from "../components/diversity";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import Searchbar from "../components/searchbar";
-import Slider from "../components/slider";
+import Slider from "../components/first_Slider";
 
 const Home = () => {
   return (

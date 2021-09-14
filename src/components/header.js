@@ -55,7 +55,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 const Header = () => {
   const classes = useStyles();
-
+const handleClick=()=>{
+  console.log("clicked")
+  window.open("https://www.happiestminds.com/")
+}
   return (
   
       <div className={classes.root}>
@@ -88,12 +91,12 @@ const Header = () => {
                 Benefits
                 <Divider className={classes.divider} orientation="vertical" />
               </Button>
-              <Button color="black" href="/lifeatwork" className={classes.button}>
+              <Button color="black" href="/lifeatwork"   className={classes.button}>
                 {" "}
                 Life@Work
 
               </Button>
-              <Button className={classes.button1}>COMPANY WEBSITE</Button>
+              <Button className={classes.button1} onClick={handleClick}>COMPANY WEBSITE</Button>
             </Grid>{" "}
           </Toolbar>
         </AppBar>
