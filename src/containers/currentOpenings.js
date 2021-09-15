@@ -22,6 +22,7 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 import Checkbox from "@material-ui/core/Checkbox";
 
 import { withStyles, createTheme } from "@material-ui/core/styles";
+import Footer from "../components/footer";
 
 const CssTextField = withStyles({
   root: {
@@ -347,6 +348,7 @@ const CurrentOpenings = ({}) => {
           </Grid>
         </Grid>
       </Grid>
+
     </>
   );
 };

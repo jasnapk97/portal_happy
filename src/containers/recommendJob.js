@@ -112,7 +112,7 @@ const useStyles = makeStyles((theme) => ({
 
   divider: {
     marginTop: " 19px",
-    width: "214px",
+     width: "189px",
     color: "black",
     backgroundColor: "grey",
   },
@@ -135,6 +135,9 @@ const useStyles = makeStyles((theme) => ({
     color: "yellowgreen",
     fontWeight: "normal",
     fontSize: "x-large",
+  },
+  input: {
+     display: 'none',
   },
 }));
 const Recommendedjob = () => {
@@ -227,10 +230,27 @@ const Recommendedjob = () => {
                         <Divider
                           className={classes.divider}
                           orientation="horizondal"
+                          accept="image/*"
                         ></Divider>
+                         <input
+        accept="image/*"
+        className={classes.input}
+        id="contained-button-file"
+        multiple
+        type="file"
+      />
                       </Grid>
                       <Grid item>
-                        <FolderOutlinedIcon onClick={fileUpload}  className={classes.fileicon} />
+                     
+                      <label htmlFor="contained-button-file">
+       
+     
+        <Button  backgroundColor="transparent" component="span">
+        <FolderOutlinedIcon   className={classes.fileicon} />
+        </Button>
+        </label>
+
+                        {/* <FolderOutlinedIcon onClick={fileUpload}  className={classes.fileicon} /> */}
                       </Grid>
                     </Grid>
                     <p style={{ fontSize: "10px" }}> {description}</p>
