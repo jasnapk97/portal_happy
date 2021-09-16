@@ -4,7 +4,7 @@ import Header from "../components/header";
 import IconButton from "@material-ui/core/IconButton";
 import { makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
-import { Button, Divider, Grid, Paper } from "@material-ui/core";
+import { Button, Card, Divider, Grid, Paper } from "@material-ui/core";
 import { withStyles, createTheme } from "@material-ui/core/styles";
 import FolderOutlinedIcon from "@material-ui/icons/FolderOutlined";
 import TextField from "@material-ui/core/TextField";
@@ -112,7 +112,7 @@ const useStyles = makeStyles((theme) => ({
 
   divider: {
     marginTop: " 19px",
-     width: "189px",
+    width: "189px",
     color: "black",
     backgroundColor: "grey",
   },
@@ -137,12 +137,24 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "x-large",
   },
   input: {
-     display: 'none',
+    display: "none",
   },
+  recommendbutton:{
+    backgroundColor:"yellowgreen",
+    color:"white",
+    "&:hover ": {
+     backgroundColor:"green",
+     color:"white",
+    },
+
+  },
+ 
 }));
 const Recommendedjob = () => {
   const classes = useStyles();
   const [searchkey, setserach] = React.useState("");
+  const [filename, setFilename] = React.useState("");
+  const [job, setJob] = React.useState({ backgroundColor:"green" });
   const handleChange = (e) => {
     setserach(e.target.value);
   };
@@ -152,10 +164,10 @@ const Recommendedjob = () => {
   const handleReset = (e) => {
     setserach("");
   };
-
-  const fileUpload=()=>{
-    console.log("lakjdh")
-  }
+  const fileInput = React.createRef();
+  const fileUpload = () => {
+    console.log("lakjdh");
+  };
   let description =
     " For best results, upload *.doc/*.docx/*.pdf/*.txt format files only (File size should be < 2MB)";
   return (
@@ -218,8 +230,20 @@ const Recommendedjob = () => {
                     padding: "25px",
                   }}
                 >
-                  <Paper className={classes.job}>
-                    <h3 className={classes.subheading}>Job Recommender</h3>
+                  <Card className={classes.job} 
+                 
+                  onMouseOver={(e) => {
+                    setJob({ color: "black" });
+                  }}
+                  onMouseLeave={(e) => {
+                    setJob({ color: "yellowgreen" });
+                  }}
+                
+                >
+                    <h3 
+                  className={classes.subheading} 
+                    job={job}
+                     >Job Recommender</h3>
                     <Grid
                       container
                       style={{
@@ -227,35 +251,41 @@ const Recommendedjob = () => {
                       }}
                     >
                       <Grid item>
+                        <label style={{ fontSize: "12px" }}>{filename}</label>
                         <Divider
                           className={classes.divider}
                           orientation="horizondal"
                           accept="image/*"
                         ></Divider>
-                         <input
-        accept="image/*"
-        className={classes.input}
-        id="contained-button-file"
-        multiple
-        type="file"
-      />
+
+                        <input
+                          accept="image/*"
+                          className={classes.input}
+                          id="contained-button-file"
+                          multiple
+                          type="file"
+                          ref={fileInput}
+                          onChange={(e) => {
+                            setFilename(fileInput.current.files[0].name);
+                          }}
+                        ></input>
                       </Grid>
                       <Grid item>
-                     
-                      <label htmlFor="contained-button-file">
-       
-     
-        <Button  backgroundColor="transparent" component="span">
-        <FolderOutlinedIcon   className={classes.fileicon} />
-        </Button>
-        </label>
-
-                        {/* <FolderOutlinedIcon onClick={fileUpload}  className={classes.fileicon} /> */}
+                        <label htmlFor="contained-button-file">
+                          <Button
+                            backgroundColor="transparent"
+                            component="span"
+                          >
+                            <FolderOutlinedIcon className={classes.fileicon} />
+                          </Button>
+                        </label>
                       </Grid>
                     </Grid>
                     <p style={{ fontSize: "10px" }}> {description}</p>
-                  </Paper>
+                    <Button className={classes.recommendbutton}>Recommend</Button>
+                  </Card>
                 </Grid>
+                {/* <Divider className={classes.divider} orientation="vertical" /> */}
                 <Grid
                   item
                   style={{
@@ -264,6 +294,7 @@ const Recommendedjob = () => {
                     padding: "65px",
                   }}
                 >
+                
                   <h3 style={{ color: "yellowgreen" }}>
                     How Job Recommender works?
                   </h3>
