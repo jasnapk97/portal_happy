@@ -55,6 +55,19 @@ const Footer = () => {
     window.open("https://www.happiestminds.com/privacy-policy/");
   };
 
+  const linkedinCick = () => {
+    window.open("https://www.linkedin.com/company/happiest-minds-technologies");
+  };
+  const twitterCick = () => {
+    window.open("https://twitter.com/happiestminds");
+  };
+
+  const youtubeCick = () => {
+    window.open("https://www.youtube.com/user/HappiestMinds");
+  };
+  const instagramCick = () => {
+    window.open("https://www.instagram.com/HappiestMinds/");
+  };
   return (
     <div>
       <Grid
@@ -155,10 +168,10 @@ const Footer = () => {
               <p style={{ color: "gray" }}>
                 {" "}
                 <FacebookIcon />
-                <LinkedInIcon />
-                <TwitterIcon />
-                <YouTubeIcon />
-                <InstagramIcon />
+                <LinkedInIcon onClick={linkedinCick}/>
+                <TwitterIcon onClick={twitterCick}/>
+                <YouTubeIcon onClick={youtubeCick}/>
+                <InstagramIcon onClick={instagramCick}/>
               </p>
             </div>
           </div>

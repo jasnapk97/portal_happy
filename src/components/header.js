@@ -18,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
     color: "black",
+    "&:hover":{
+      backgroundColor:"transparent"
+    }
   },
   image: {
     paddingLeft: "20px",
@@ -62,11 +65,15 @@ const Header = () => {
           <div>
             <img className={classes.image} src={logo}></img>
           </div>
-          <Typography variant="h8" className={classes.title}>
-            Careers
+          <Typography variant="h8" className={classes.title} >
+          <Button color="black" className={classes.title} href="/" >
+          Careers
+              
+            </Button>
+           
           </Typography>
           <Grid style={{ backgroundColor: "", marginRight: "60px" }}>
-            <Button color="black" className={classes.button} href="/">
+            <Button color="black" className={classes.button} href="/carrier" >
               Home
               <Divider className={classes.divider} orientation="vertical" />
             </Button>
