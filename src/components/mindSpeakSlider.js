@@ -219,13 +219,85 @@ const Mindspeakslider = () => {
         </>
       ),
     },
+{
+  name: (
+    <>
+      <Grid container className={classes.Container}>
+        <Grid>
+          <Card className={classes.root} lg={3} sm={2}>
+            <CardActionArea>
+              <CardContent className={classes.cardcontent}>
+                <Grid container>
+                  <Grid style={{ width: "30%" }}>
+                    {" "}
+                    <img
+                      style={{ width: "100%", height: "90%" }}
+                      src={photo1}
+                    ></img>
+                  </Grid>
 
-    {
-      name: (
-        <>
-          <Grid container className={classes.Container}>
-            <Grid>
-              <Card className={classes.root} lg={3} sm={2}>
+                  <Grid style={{ width: "70%" }}>
+                    <Paper className={classes.general}>
+                      Shefali Mundhada
+                      <p> Senior Engineering Manager</p>
+                    </Paper>
+                  </Grid>
+                </Grid>
+                <Typography
+                  variant="body2"
+                  style={{ padding: "10px" }}
+                  color="black"
+                  component="p"
+                >
+                  Come April, I will be completing my 4 years at Happiest
+                  Minds. Needless to say, what an amazing journey it has
+                  been. In my 20 years of a Sales career this is one of the
+                  most dedicated & collaborative teams I ever worked with. I
+                  am very sure we will soar to new heights in the coming
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
+        <Grid style={{ marginLeft: "20px" }}>
+          <Card className={classes.root} lg={3} sm={2}>
+            <CardActionArea>
+              <CardContent className={classes.cardcontent}>
+                <Grid container>
+                  <Grid style={{ width: "30%" }}>
+                    {" "}
+                    <img
+                      style={{ width: "100%", height: "90%" }}
+                      src={photo2}
+                    ></img>
+                  </Grid>
+
+                  <Grid style={{ width: "70%" }}>
+                    <Paper className={classes.heading_sub}>
+                      Sarvesh Deshmukh
+                      <p> Director-Business Development</p>
+                    </Paper>
+                  </Grid>
+                </Grid>
+
+                <Typography
+                  variant="body2"
+                  style={{ padding: "10px" }}
+                  color="black"
+                  component="p"
+                >
+                  Happiest Minds Cloud implementation offerings takes next
+                  leap towards finding innovative ways to strategize and
+                  optimize the services/operations, information access,
+                  application development and find new venues of market
+                  expansion opportunities.
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
+        <Grid style={{ marginLeft: "20px" }}>
+        <Card className={classes.root} lg={3} sm={2}>
                 <CardActionArea>
                   <CardContent className={classes.cardcontent}>
                     <Grid container>
@@ -256,7 +328,64 @@ const Mindspeakslider = () => {
                       how often I have had the opportunity to work on some of
                       these leading-edge solutions myself – from newer
                       architectural paradigms to emerging technologies and
-                      languages. I was
+                      languages. 
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+        </Grid>
+      </Grid>
+    </>
+  ),
+
+
+},
+    {
+      name: (
+        <>
+          <Grid container className={classes.Container}>
+            <Grid>
+            <Card className={classes.root} lg={3} sm={2}>
+                <CardActionArea>
+                  <CardContent className={classes.cardcontent}>
+                    <Grid container>
+                      <Grid style={{ width: "30%" }}>
+                        {" "}
+                        <img
+                          style={{ width: "100%", height: "90%" }}
+                          src={photo5}
+                        ></img>
+                      </Grid>
+
+                      <Grid style={{ width: "70%" }}>
+                        <Paper className={classes.personalinformation}>
+                          Manjula Loganathan
+                          <p>Senior Manager – L&D</p>
+                        </Paper>
+                      </Grid>
+                    </Grid>
+
+                    <Typography
+                      variant="body2"
+                      style={{ padding: "10px" }}
+                      color="black"
+                      component="p"
+                    >
+                      Happiest Minds is truly one of the “Best places to work
+                      for”. I had not heard of Happiest Minds before joining;
+                      however the first week into my job I realized that there
+                      are ample opportunities available to those who want to
+                      build a meaningful career here.
+                      <IconButton
+                        className={clsx(classes.expand, {
+                          [classes.expandOpen]: expanded,
+                        })}
+                        onClick={handleExpandClick}
+                        aria-expanded={expanded}
+                        aria-label="show more"
+                      >
+                        {/* <p style={{color:"yellowgreen"}} visible={visible}>  Show More....</p> */}
+                      </IconButton>
                     </Typography>
                   </CardContent>
                 </CardActionArea>

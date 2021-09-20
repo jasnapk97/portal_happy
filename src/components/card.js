@@ -157,7 +157,7 @@ const CardComponent = () => {
                             style={style}
                             onClick={blockchainMore}
                           >
-                            More
+                            More |
                           </Button>
                         </Grid>{" "}
                       </Grid>
@@ -202,7 +202,7 @@ const CardComponent = () => {
                             style={styledatascience}
                             onClick={datascienceMore}
                           >
-                            More
+                            More |
                           </Button>
                         </Grid>{" "}
                       </Grid>
@@ -252,7 +252,7 @@ const CardComponent = () => {
                             style={styledevops}
                             onClick={devopsMore}
                           >
-                            More
+                            More |
                           </Button>
                         </Grid>{" "}
                       </Grid>
@@ -299,7 +299,7 @@ const CardComponent = () => {
                             style={styleprograms}
                             onClick={programsMore}
                           >
-                            More
+                            More |
                           </Button>
                         </Grid>{" "}
                       </Grid>
@@ -351,7 +351,7 @@ const CardComponent = () => {
                             style={stylecloud}
                             onClick={cloudMore}
                           >
-                            More
+                            More |
                           </Button>
                         </Grid>{" "}
                       </Grid>
@@ -400,7 +400,7 @@ const CardComponent = () => {
                             style={styleinternet}
                             onClick={internetMore}
                           >
-                            More
+                            More |
                           </Button>
                         </Grid>{" "}
                       </Grid>

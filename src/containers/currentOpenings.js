@@ -161,6 +161,7 @@ const CurrentOpenings = ({}) => {
   };
   const handleReset = (e) => {
     setserach("");
+    dispatch(fetchUserslist());
   };
   const [checkbox, setCheckbox] = React.useState({
     Bangalore: false,
